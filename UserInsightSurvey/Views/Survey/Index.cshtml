@@ -1,0 +1,52 @@
+@model List<UserInsightSurvey.Models.Concrete.SurveyQuestionViewModel>
+
+@{
+    ViewBag.Title = "Anket";
+}
+
+<h2>Anket</h2>
+
+<form asp-action="Index" method="post">
+    @for (int i = 0; i < Model.Count; i++)
+    {
+        <div class="mb-4">
+            <label><b>@(i + 1). @Model[i].Content</b></label>
+            <br />
+
+            @switch (Model[i].QuestionType)
+            {
+                case UserInsightSurvey.Common.QuestionType.SingleChoice:
+                    foreach (var option in Model[i].Options)
+                    {
+                        <div>
+                            <input type="radio"
+                                   name="[@i].SelectedOptionId"
+                                   value="@option.Id"
+                                   id="q@Model[i].QuestionId-opt@option.Id" />
+                            <label for="q@Model[i].QuestionId-opt@option.Id">@option.Content</label>
+                        </div>
+                    }
+                    break;
+
+                case UserInsightSurvey.Common.QuestionType.MultipleChoice:
+                    foreach (var option in Model[i].Options)
+                    {
+                        <div>
+                            <input type="checkbox"
+                                   name="[@i].SelectedOptionIds"
+                                   value="@option.Id"
+                                   id="q@Model[i].QuestionId-opt@option.Id" />
+                            <label for="q@Model[i].QuestionId-opt@option.Id">@option.Content</label>
+                        </div>
+                    }
+                    break;
+
+                case UserInsightSurvey.Common.QuestionType.Text:
+                    <textarea name="[@i].AnswerText" class="form-control" rows="2"></textarea>
+                    break;
+            }
+        </div>
+    }
+
+    <button type="submit" class="btn btn-primary">Gönder</button>
+</form> 

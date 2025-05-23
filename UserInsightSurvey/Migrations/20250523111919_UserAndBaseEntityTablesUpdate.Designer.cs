@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using UserInsightSurvey.Context;
 
@@ -11,9 +12,11 @@ using UserInsightSurvey.Context;
 namespace UserInsightSurvey.Migrations
 {
     [DbContext(typeof(UserSurveyDbContext))]
-    partial class UserSurveyDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250523111919_UserAndBaseEntityTablesUpdate")]
+    partial class UserAndBaseEntityTablesUpdate
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -233,175 +236,175 @@ namespace UserInsightSurvey.Migrations
                         {
                             Id = 1,
                             Content = "ASP.NET Core",
-                            CreatedDate = new DateTime(2025, 5, 23, 15, 9, 52, 136, DateTimeKind.Local).AddTicks(2870),
+                            CreatedDate = new DateTime(2025, 5, 23, 14, 19, 19, 452, DateTimeKind.Local).AddTicks(9731),
                             QuestionId = 2
                         },
                         new
                         {
                             Id = 2,
                             Content = "WinForms",
-                            CreatedDate = new DateTime(2025, 5, 23, 15, 9, 52, 136, DateTimeKind.Local).AddTicks(2872),
+                            CreatedDate = new DateTime(2025, 5, 23, 14, 19, 19, 452, DateTimeKind.Local).AddTicks(9734),
                             QuestionId = 2
                         },
                         new
                         {
                             Id = 3,
                             Content = "WPF",
-                            CreatedDate = new DateTime(2025, 5, 23, 15, 9, 52, 136, DateTimeKind.Local).AddTicks(2873),
+                            CreatedDate = new DateTime(2025, 5, 23, 14, 19, 19, 452, DateTimeKind.Local).AddTicks(9735),
                             QuestionId = 2
                         },
                         new
                         {
                             Id = 4,
                             Content = "Blazor",
-                            CreatedDate = new DateTime(2025, 5, 23, 15, 9, 52, 136, DateTimeKind.Local).AddTicks(2874),
+                            CreatedDate = new DateTime(2025, 5, 23, 14, 19, 19, 452, DateTimeKind.Local).AddTicks(9736),
                             QuestionId = 2
                         },
                         new
                         {
                             Id = 5,
                             Content = "Visual Studio",
-                            CreatedDate = new DateTime(2025, 5, 23, 15, 9, 52, 136, DateTimeKind.Local).AddTicks(2876),
+                            CreatedDate = new DateTime(2025, 5, 23, 14, 19, 19, 452, DateTimeKind.Local).AddTicks(9737),
                             QuestionId = 3
                         },
                         new
                         {
                             Id = 6,
                             Content = "Rider",
-                            CreatedDate = new DateTime(2025, 5, 23, 15, 9, 52, 136, DateTimeKind.Local).AddTicks(2877),
+                            CreatedDate = new DateTime(2025, 5, 23, 14, 19, 19, 452, DateTimeKind.Local).AddTicks(9738),
                             QuestionId = 3
                         },
                         new
                         {
                             Id = 7,
                             Content = "VS Code",
-                            CreatedDate = new DateTime(2025, 5, 23, 15, 9, 52, 136, DateTimeKind.Local).AddTicks(2879),
+                            CreatedDate = new DateTime(2025, 5, 23, 14, 19, 19, 452, DateTimeKind.Local).AddTicks(9738),
                             QuestionId = 3
                         },
                         new
                         {
                             Id = 8,
                             Content = "Diğer",
-                            CreatedDate = new DateTime(2025, 5, 23, 15, 9, 52, 136, DateTimeKind.Local).AddTicks(2880),
+                            CreatedDate = new DateTime(2025, 5, 23, 14, 19, 19, 452, DateTimeKind.Local).AddTicks(9739),
                             QuestionId = 3
                         },
                         new
                         {
                             Id = 9,
                             Content = "MVC",
-                            CreatedDate = new DateTime(2025, 5, 23, 15, 9, 52, 136, DateTimeKind.Local).AddTicks(2881),
+                            CreatedDate = new DateTime(2025, 5, 23, 14, 19, 19, 452, DateTimeKind.Local).AddTicks(9740),
                             QuestionId = 5
                         },
                         new
                         {
                             Id = 10,
                             Content = "MVVM",
-                            CreatedDate = new DateTime(2025, 5, 23, 15, 9, 52, 136, DateTimeKind.Local).AddTicks(2883),
+                            CreatedDate = new DateTime(2025, 5, 23, 14, 19, 19, 452, DateTimeKind.Local).AddTicks(9741),
                             QuestionId = 5
                         },
                         new
                         {
                             Id = 11,
                             Content = "Onion Architecture",
-                            CreatedDate = new DateTime(2025, 5, 23, 15, 9, 52, 136, DateTimeKind.Local).AddTicks(2884),
+                            CreatedDate = new DateTime(2025, 5, 23, 14, 19, 19, 452, DateTimeKind.Local).AddTicks(9741),
                             QuestionId = 5
                         },
                         new
                         {
                             Id = 12,
                             Content = "Clean Architecture",
-                            CreatedDate = new DateTime(2025, 5, 23, 15, 9, 52, 136, DateTimeKind.Local).AddTicks(2885),
+                            CreatedDate = new DateTime(2025, 5, 23, 14, 19, 19, 452, DateTimeKind.Local).AddTicks(9742),
                             QuestionId = 5
                         },
                         new
                         {
                             Id = 13,
                             Content = "SQL Server",
-                            CreatedDate = new DateTime(2025, 5, 23, 15, 9, 52, 136, DateTimeKind.Local).AddTicks(2886),
+                            CreatedDate = new DateTime(2025, 5, 23, 14, 19, 19, 452, DateTimeKind.Local).AddTicks(9743),
                             QuestionId = 7
                         },
                         new
                         {
                             Id = 14,
                             Content = "PostgreSQL",
-                            CreatedDate = new DateTime(2025, 5, 23, 15, 9, 52, 136, DateTimeKind.Local).AddTicks(2886),
+                            CreatedDate = new DateTime(2025, 5, 23, 14, 19, 19, 452, DateTimeKind.Local).AddTicks(9744),
                             QuestionId = 7
                         },
                         new
                         {
                             Id = 15,
                             Content = "MySQL",
-                            CreatedDate = new DateTime(2025, 5, 23, 15, 9, 52, 136, DateTimeKind.Local).AddTicks(2887),
+                            CreatedDate = new DateTime(2025, 5, 23, 14, 19, 19, 452, DateTimeKind.Local).AddTicks(9744),
                             QuestionId = 7
                         },
                         new
                         {
                             Id = 16,
                             Content = "MongoDB",
-                            CreatedDate = new DateTime(2025, 5, 23, 15, 9, 52, 136, DateTimeKind.Local).AddTicks(2888),
+                            CreatedDate = new DateTime(2025, 5, 23, 14, 19, 19, 452, DateTimeKind.Local).AddTicks(9745),
                             QuestionId = 7
                         },
                         new
                         {
                             Id = 17,
                             Content = "Azure",
-                            CreatedDate = new DateTime(2025, 5, 23, 15, 9, 52, 136, DateTimeKind.Local).AddTicks(2889),
+                            CreatedDate = new DateTime(2025, 5, 23, 14, 19, 19, 452, DateTimeKind.Local).AddTicks(9746),
                             QuestionId = 9
                         },
                         new
                         {
                             Id = 18,
                             Content = "AWS",
-                            CreatedDate = new DateTime(2025, 5, 23, 15, 9, 52, 136, DateTimeKind.Local).AddTicks(2890),
+                            CreatedDate = new DateTime(2025, 5, 23, 14, 19, 19, 452, DateTimeKind.Local).AddTicks(9747),
                             QuestionId = 9
                         },
                         new
                         {
                             Id = 19,
                             Content = "Google Cloud",
-                            CreatedDate = new DateTime(2025, 5, 23, 15, 9, 52, 136, DateTimeKind.Local).AddTicks(2891),
+                            CreatedDate = new DateTime(2025, 5, 23, 14, 19, 19, 452, DateTimeKind.Local).AddTicks(9747),
                             QuestionId = 9
                         },
                         new
                         {
                             Id = 20,
                             Content = "Hiçbiri",
-                            CreatedDate = new DateTime(2025, 5, 23, 15, 9, 52, 136, DateTimeKind.Local).AddTicks(2892),
+                            CreatedDate = new DateTime(2025, 5, 23, 14, 19, 19, 452, DateTimeKind.Local).AddTicks(9748),
                             QuestionId = 9
                         },
                         new
                         {
                             Id = 21,
                             Content = "Analiz",
-                            CreatedDate = new DateTime(2025, 5, 23, 15, 9, 52, 136, DateTimeKind.Local).AddTicks(2893),
+                            CreatedDate = new DateTime(2025, 5, 23, 14, 19, 19, 452, DateTimeKind.Local).AddTicks(9749),
                             QuestionId = 10
                         },
                         new
                         {
                             Id = 22,
                             Content = "Tasarım",
-                            CreatedDate = new DateTime(2025, 5, 23, 15, 9, 52, 136, DateTimeKind.Local).AddTicks(2894),
+                            CreatedDate = new DateTime(2025, 5, 23, 14, 19, 19, 452, DateTimeKind.Local).AddTicks(9749),
                             QuestionId = 10
                         },
                         new
                         {
                             Id = 23,
                             Content = "Kodlama",
-                            CreatedDate = new DateTime(2025, 5, 23, 15, 9, 52, 136, DateTimeKind.Local).AddTicks(2895),
+                            CreatedDate = new DateTime(2025, 5, 23, 14, 19, 19, 452, DateTimeKind.Local).AddTicks(9750),
                             QuestionId = 10
                         },
                         new
                         {
                             Id = 24,
                             Content = "Test",
-                            CreatedDate = new DateTime(2025, 5, 23, 15, 9, 52, 136, DateTimeKind.Local).AddTicks(2896),
+                            CreatedDate = new DateTime(2025, 5, 23, 14, 19, 19, 452, DateTimeKind.Local).AddTicks(9752),
                             QuestionId = 10
                         },
                         new
                         {
                             Id = 25,
                             Content = "Bakım",
-                            CreatedDate = new DateTime(2025, 5, 23, 15, 9, 52, 136, DateTimeKind.Local).AddTicks(2897),
+                            CreatedDate = new DateTime(2025, 5, 23, 14, 19, 19, 452, DateTimeKind.Local).AddTicks(9753),
                             QuestionId = 10
                         });
                 });
@@ -442,7 +445,7 @@ namespace UserInsightSurvey.Migrations
                         {
                             Id = 1,
                             Content = "C# dilinde en çok kullandığınız özellik nedir?",
-                            CreatedDate = new DateTime(2025, 5, 23, 15, 9, 52, 136, DateTimeKind.Local).AddTicks(2603),
+                            CreatedDate = new DateTime(2025, 5, 23, 14, 19, 19, 452, DateTimeKind.Local).AddTicks(9520),
                             MultipleChoice = false,
                             QuestionType = 0
                         },
@@ -450,7 +453,7 @@ namespace UserInsightSurvey.Migrations
                         {
                             Id = 2,
                             Content = ".NET teknolojilerinden hangileriyle çalıştınız?",
-                            CreatedDate = new DateTime(2025, 5, 23, 15, 9, 52, 136, DateTimeKind.Local).AddTicks(2622),
+                            CreatedDate = new DateTime(2025, 5, 23, 14, 19, 19, 452, DateTimeKind.Local).AddTicks(9538),
                             MultipleChoice = true,
                             QuestionType = 2
                         },
@@ -458,7 +461,7 @@ namespace UserInsightSurvey.Migrations
                         {
                             Id = 3,
                             Content = "En çok kullandığınız IDE hangisidir?",
-                            CreatedDate = new DateTime(2025, 5, 23, 15, 9, 52, 136, DateTimeKind.Local).AddTicks(2624),
+                            CreatedDate = new DateTime(2025, 5, 23, 14, 19, 19, 452, DateTimeKind.Local).AddTicks(9555),
                             MultipleChoice = true,
                             QuestionType = 1
                         },
@@ -466,7 +469,7 @@ namespace UserInsightSurvey.Migrations
                         {
                             Id = 4,
                             Content = "Entity Framework ile ilgili deneyiminizi kısaca anlatır mısınız?",
-                            CreatedDate = new DateTime(2025, 5, 23, 15, 9, 52, 136, DateTimeKind.Local).AddTicks(2653),
+                            CreatedDate = new DateTime(2025, 5, 23, 14, 19, 19, 452, DateTimeKind.Local).AddTicks(9556),
                             MultipleChoice = false,
                             QuestionType = 0
                         },
@@ -474,7 +477,7 @@ namespace UserInsightSurvey.Migrations
                         {
                             Id = 5,
                             Content = "Aşağıdaki mimari desenlerden hangilerini projelerinizde kullandınız?",
-                            CreatedDate = new DateTime(2025, 5, 23, 15, 9, 52, 136, DateTimeKind.Local).AddTicks(2655),
+                            CreatedDate = new DateTime(2025, 5, 23, 14, 19, 19, 452, DateTimeKind.Local).AddTicks(9557),
                             MultipleChoice = true,
                             QuestionType = 2
                         },
@@ -482,7 +485,7 @@ namespace UserInsightSurvey.Migrations
                         {
                             Id = 6,
                             Content = ".NET Core ile .NET Framework arasındaki temel fark nedir?",
-                            CreatedDate = new DateTime(2025, 5, 23, 15, 9, 52, 136, DateTimeKind.Local).AddTicks(2656),
+                            CreatedDate = new DateTime(2025, 5, 23, 14, 19, 19, 452, DateTimeKind.Local).AddTicks(9558),
                             MultipleChoice = false,
                             QuestionType = 0
                         },
@@ -490,7 +493,7 @@ namespace UserInsightSurvey.Migrations
                         {
                             Id = 7,
                             Content = "Hangi veritabanı sistemleriyle çalıştınız?",
-                            CreatedDate = new DateTime(2025, 5, 23, 15, 9, 52, 136, DateTimeKind.Local).AddTicks(2657),
+                            CreatedDate = new DateTime(2025, 5, 23, 14, 19, 19, 452, DateTimeKind.Local).AddTicks(9559),
                             MultipleChoice = true,
                             QuestionType = 2
                         },
@@ -498,7 +501,7 @@ namespace UserInsightSurvey.Migrations
                         {
                             Id = 8,
                             Content = "Bir web API projesinde en önemli gördüğünüz güvenlik önlemi nedir?",
-                            CreatedDate = new DateTime(2025, 5, 23, 15, 9, 52, 136, DateTimeKind.Local).AddTicks(2659),
+                            CreatedDate = new DateTime(2025, 5, 23, 14, 19, 19, 452, DateTimeKind.Local).AddTicks(9560),
                             MultipleChoice = false,
                             QuestionType = 0
                         },
@@ -506,7 +509,7 @@ namespace UserInsightSurvey.Migrations
                         {
                             Id = 9,
                             Content = "Aşağıdaki bulut servislerinden hangilerini kullandınız?",
-                            CreatedDate = new DateTime(2025, 5, 23, 15, 9, 52, 136, DateTimeKind.Local).AddTicks(2661),
+                            CreatedDate = new DateTime(2025, 5, 23, 14, 19, 19, 452, DateTimeKind.Local).AddTicks(9561),
                             MultipleChoice = true,
                             QuestionType = 2
                         },
@@ -514,7 +517,7 @@ namespace UserInsightSurvey.Migrations
                         {
                             Id = 10,
                             Content = "Yazılım geliştirme sürecinde en çok hangi aşamada zorlanıyorsunuz?",
-                            CreatedDate = new DateTime(2025, 5, 23, 15, 9, 52, 136, DateTimeKind.Local).AddTicks(2662),
+                            CreatedDate = new DateTime(2025, 5, 23, 14, 19, 19, 452, DateTimeKind.Local).AddTicks(9563),
                             MultipleChoice = true,
                             QuestionType = 1
                         });
@@ -676,7 +679,7 @@ namespace UserInsightSurvey.Migrations
             modelBuilder.Entity("UserInsightSurvey.Data.Concrete.Option", b =>
                 {
                     b.HasOne("UserInsightSurvey.Data.Concrete.Question", "Question")
-                        .WithMany("Options")
+                        .WithMany()
                         .HasForeignKey("QuestionId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -687,8 +690,6 @@ namespace UserInsightSurvey.Migrations
             modelBuilder.Entity("UserInsightSurvey.Data.Concrete.Question", b =>
                 {
                     b.Navigation("Answers");
-
-                    b.Navigation("Options");
                 });
 
             modelBuilder.Entity("UserInsightSurvey.Data.Concrete.User", b =>

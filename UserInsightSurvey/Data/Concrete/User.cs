@@ -11,6 +11,6 @@ namespace UserInsightSurvey.Data.Concrete
 		public string CvFilePath { get; set; }
 		public UserType UserType { get; set; }
 		public ICollection<Answer>? Answers { get; set; } = new List<Answer>();
-
+		public DateTime? Deleted { get; set; }
 	}
 }

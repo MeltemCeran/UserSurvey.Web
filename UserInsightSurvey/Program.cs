@@ -2,7 +2,11 @@ using Microsoft.EntityFrameworkCore;
 using System;
 using UserInsightSurvey.Context;
 using Microsoft.AspNetCore.Identity;
-using UserInsightSurvey.Data.Concrete; 
+using UserInsightSurvey.Data.Concrete;
+using UserInsightSurvey.Managers.Abstract;
+using UserInsightSurvey.Managers.Concrete;
+using UserInsightSurvey.Repositories.Abstract;
+using UserInsightSurvey.Repositories.Concrete;
 
 namespace UserInsightSurvey
 {
@@ -15,11 +19,24 @@ namespace UserInsightSurvey
 			builder.Services.AddDbContext<UserSurveyDbContext>(options =>
 	        options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
-			builder.Services.AddDefaultIdentity<User>()
-				.AddEntityFrameworkStores<UserSurveyDbContext>();
+			builder.Services.AddDefaultIdentity<User>(options =>
+			{
+				options.Password.RequireDigit = true;
+				options.Password.RequireLowercase = true;
+				options.Password.RequireUppercase = true;
+				options.Password.RequireNonAlphanumeric = true;
+				options.Password.RequiredLength = 6;
+			})
+			.AddEntityFrameworkStores<UserSurveyDbContext>();
 
 			// Add services to the container.
 			builder.Services.AddControllersWithViews();
+			builder.Services.AddScoped<IUserRegisterManager, UserRegisterManager>();
+			builder.Services.AddScoped<ISurveyManager, SurveyManager>();
+			builder.Services.AddScoped<IUserRepository, UserRepository>();
+			builder.Services.AddScoped<IQuestionRepository, QuestionRepository>();
+			builder.Services.AddScoped<IOptionRepository, OptionRepository>();
+			builder.Services.AddScoped<IAnswerRepository, AnswerRepository>();
 
             var app = builder.Build();
 

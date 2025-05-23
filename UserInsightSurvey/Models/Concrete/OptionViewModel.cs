@@ -1,8 +1,9 @@
-﻿namespace UserInsightSurvey.Models.Concrete
+﻿using UserInsightSurvey.Models.Abstract;
+
+namespace UserInsightSurvey.Models.Concrete
 {
-	public class OptionViewModel
+	public class OptionViewModel : BaseViewModel
 	{
-		public int Id { get; set; }
 		public string Content { get; set; }
 	}
 }
