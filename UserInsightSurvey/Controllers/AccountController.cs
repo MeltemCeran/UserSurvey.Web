@@ -46,5 +46,24 @@ namespace UserInsightSurvey.Controllers
             }
             return View(model);
         }
+
+        [HttpGet]
+        public IActionResult Login()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult Login(LoginViewModel model)
+        {
+            if (!ModelState.IsValid)
+            {
+                ViewData["ErrorMessage"] = "Lütfen tüm alanları doldurun.";
+                return View(model);
+            }
+            // Giriş işlemleri burada yapılacak
+            ViewData["ErrorMessage"] = "Geçersiz giriş.";
+            return View(model);
+        }
     }
 }

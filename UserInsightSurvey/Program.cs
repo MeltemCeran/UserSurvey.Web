@@ -33,6 +33,7 @@ namespace UserInsightSurvey
 			builder.Services.AddControllersWithViews();
 			builder.Services.AddScoped<IUserRegisterManager, UserRegisterManager>();
 			builder.Services.AddScoped<ISurveyManager, SurveyManager>();
+            builder.Services.AddScoped<IProfileManager, ProfileManager>();
 			builder.Services.AddScoped<IUserRepository, UserRepository>();
 			builder.Services.AddScoped<IQuestionRepository, QuestionRepository>();
 			builder.Services.AddScoped<IOptionRepository, OptionRepository>();

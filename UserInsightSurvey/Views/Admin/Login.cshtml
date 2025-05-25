@@ -1,0 +1,32 @@
+@model UserInsightSurvey.Models.Concrete.AdminLoginViewModel
+
+@{
+    Layout = "~/Views/Shared/_AuthLayout.cshtml";
+    ViewData["PanelTitle"] = "Yönetici Girişi";
+    ViewData["PanelSubtitle"] = "Sisteme erişmek için lütfen yönetici bilgilerinizi girin.";
+    ViewData["PanelDescription"] = "Bu alan sadece yetkili kullanıcılar içindir. Bilgileriniz güvenli bir şekilde saklanır.";
+    ViewData["PanelFooter"] = "Yetkisiz erişim tespit edilirse işlem yapılacaktır.";
+}
+
+@if (ViewData["ErrorMessage"] != null)
+{
+    <div class="mb-4 p-2 bg-red-100 text-red-700 rounded text-sm">@ViewData["ErrorMessage"]</div>
+}
+<form asp-action="Login" method="post" class="space-y-5">
+    <div>
+        <label asp-for="UserName" class="block text-sm font-medium text-gray-900 mb-1"></label>
+        <input asp-for="UserName" class="block w-full rounded border border-gray-300 bg-white px-3 py-2 text-base text-gray-900 placeholder:text-gray-400 focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500" />
+        <span asp-validation-for="UserName" class="text-xs text-red-600"></span>
+    </div>
+    <div>
+        <label asp-for="Password" class="block text-sm font-medium text-gray-900 mb-1"></label>
+        <input asp-for="Password" type="password" class="block w-full rounded border border-gray-300 bg-white px-3 py-2 text-base text-gray-900 placeholder:text-gray-400 focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500" />
+        <span asp-validation-for="Password" class="text-xs text-red-600"></span>
+    </div>
+    <div class="flex flex-col md:flex-row gap-2 mt-4">
+        <button type="submit" class="w-full rounded bg-gradient-to-r from-indigo-600 to-purple-500 px-4 py-2 text-base font-semibold text-white shadow-sm hover:from-indigo-500 hover:to-purple-400 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Giriş Yap</button>
+    </div>
+</form>
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+} 

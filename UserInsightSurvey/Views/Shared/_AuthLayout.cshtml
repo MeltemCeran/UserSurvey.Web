@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"]</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/UserInsightSurvey.styles.css" asp-append-version="true" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        html, body {
+            height: 100%;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body class="h-full overflow-hidden">
+@{
+    var panelTitle = ViewData["PanelTitle"] as string ?? "Başlık";
+    var panelSubtitle = ViewData["PanelSubtitle"] as string ?? "Alt başlık";
+    var panelDescription = ViewData["PanelDescription"] as string ?? "Açıklama";
+    var panelFooter = ViewData["PanelFooter"] as string ?? "Dipnot";
+}
+<div class="min-h-screen w-full flex flex-col md:flex-row bg-gray-100 overflow-hidden">
+    <!-- Sol Panel -->
+    <div class="hidden md:flex flex-col justify-between w-1/2 bg-gradient-to-br from-indigo-600 to-purple-500 p-10 text-white">
+        <div>
+            <h2 class="text-3xl font-bold mb-4 mt-24">@panelTitle</h2>
+            <p class="text-lg mb-2">@panelSubtitle</p>
+            <p class="text-base">@panelDescription</p>
+        </div>
+        <p class="text-xs opacity-80 mt-8">@panelFooter</p>
+    </div>
+    <!-- Sağ Panel/Form -->
+    <div class="flex flex-1 items-center justify-center py-8 md:py-0">
+        <div class="w-full max-w-md bg-white rounded-lg shadow-lg p-6 md:p-10 mx-2">
+            <!-- Küçük ekranlar için başlık ve açıklama -->
+            <div class="mb-6 md:hidden flex flex-col items-center text-indigo-700">
+                <h2 class="text-2xl font-bold mb-2 text-center mt-8">@panelTitle</h2>
+                <p class="text-base text-center mb-2">@panelSubtitle</p>
+                <p class="text-xs text-center mb-2">@panelDescription</p>
+                <p class="text-xs opacity-80 text-center">@panelFooter</p>
+            </div>
+            @RenderBody()
+        </div>
+    </div>
+</div>
+@RenderSection("Scripts", required: false)
+</body>
+</html> 

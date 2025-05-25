@@ -17,6 +17,8 @@ namespace UserInsightSurvey.Context
 			base.OnModelCreating(builder);
 			builder.ApplyConfiguration(new QuestionConfiguration());
 			builder.ApplyConfiguration(new OptionConfiguration());
+			builder.ApplyConfiguration(new UserConfiguration());
+			builder.ApplyConfiguration(new AnswerConfiguration());
 		}
 
 		public DbSet<User> Users { get; set; }

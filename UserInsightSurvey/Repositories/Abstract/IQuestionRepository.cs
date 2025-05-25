@@ -9,6 +9,6 @@ namespace UserInsightSurvey.Repositories.Abstract
         IEnumerable<Question> GetAll();
         void Add(Question question);
         void Update(Question question);
-        void Delete(int id); // Soft delete
+        void Delete(int id); 
     }
 } 

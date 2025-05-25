@@ -30,6 +30,7 @@ namespace UserInsightSurvey.Managers.Concrete
                 {
                     foreach (var optionId in question.SelectedOptionIds)
                     {
+                        System.Console.WriteLine($"[ANKET KAYIT] QuestionId: {question.QuestionId}, OptionId: {optionId}");
                         answers.Add(new Answer
                         {
                             QuestionId = question.QuestionId,
@@ -42,6 +43,7 @@ namespace UserInsightSurvey.Managers.Concrete
                 // Tekli seçim
                 else if (question.SelectedOptionId.HasValue)
                 {
+                    System.Console.WriteLine($"[ANKET KAYIT] QuestionId: {question.QuestionId}, OptionId: {question.SelectedOptionId.Value}");
                     answers.Add(new Answer
                     {
                         QuestionId = question.QuestionId,
@@ -53,6 +55,7 @@ namespace UserInsightSurvey.Managers.Concrete
                 // Açık uçlu
                 else if (!string.IsNullOrEmpty(question.AnswerText))
                 {
+                    System.Console.WriteLine($"[ANKET KAYIT] QuestionId: {question.QuestionId}, Text: {question.AnswerText}");
                     answers.Add(new Answer
                     {
                         QuestionId = question.QuestionId,

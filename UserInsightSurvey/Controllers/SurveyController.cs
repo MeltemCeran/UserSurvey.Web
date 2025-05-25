@@ -38,7 +38,7 @@ namespace UserInsightSurvey.Controllers
                 return Unauthorized();
 
             await _surveyManager.SaveAnswersAsync(model, user.Id);
-            return RedirectToAction("Thanks");
+            return RedirectToAction("Index", "Profile");
         }
 
         // Teşekkür sayfası
