@@ -10,5 +10,6 @@ namespace UserInsightSurvey.Data.Concrete
 		public string? Content { get; set; }
 		public User User { get; set; }
 		public Question Question { get; set; }
+		public Option Option { get; set; }
 	}
 }

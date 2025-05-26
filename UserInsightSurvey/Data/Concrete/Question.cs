@@ -1,4 +1,4 @@
-﻿using UserInsightSurvey.Common;
+﻿using UserInsightSurvey.Common.Enums;
 using UserInsightSurvey.Data.Abstract;
 
 namespace UserInsightSurvey.Data.Concrete

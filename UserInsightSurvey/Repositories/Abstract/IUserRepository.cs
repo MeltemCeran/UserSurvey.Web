@@ -10,5 +10,8 @@ namespace UserInsightSurvey.Repositories.Abstract
 		void Add(User user);
 		void Update(User user);
 		void Delete(int id);
+		int GetTotalUserCount();
+		int GetUserWithAnswersCount();
+		User GetByEmail(string email);
 	}
 }

@@ -24,20 +24,33 @@ namespace UserInsightSurvey.Controllers
             return View(model);
         }
 
-        [HttpPost]
-        public async Task<IActionResult> Update(ProfileViewModel model)
+        [HttpGet]
+        public async Task<IActionResult> Edit()
         {
+            var model = await _profileManager.GetProfileWithAnswersAsync(User.Identity.Name);
+            return View(model);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Edit(ProfileViewModel model)
+        {
+            // Şifre alanlarından biri doluysa, ikisi de dolu ve eşit olmalı
+            if (!string.IsNullOrEmpty(model.Password) || !string.IsNullOrEmpty(model.ConfirmPassword))
+            {
+                if (model.Password != model.ConfirmPassword)
+                {
+                    ModelState.AddModelError("ConfirmPassword", "Şifreler uyuşmuyor.");
+                }
+            }
             if (!ModelState.IsValid)
             {
-                var currentModel = await _profileManager.GetProfileWithAnswersAsync(User.Identity.Name);
-                return View("Index", currentModel);
+                return View(model);
             }
-            var result = await _profileManager.UpdateProfileAsync(model);
-            if (result)
+            var (success, errorMessage) = await _profileManager.UpdateProfileAsync(model);
+            if (success)
                 return RedirectToAction("Index");
-            ModelState.AddModelError("", "Güncelleme sırasında bir hata oluştu.");
-            var modelWithAnswers = await _profileManager.GetProfileWithAnswersAsync(User.Identity.Name);
-            return View("Index", modelWithAnswers);
+            ModelState.AddModelError("", errorMessage ?? "Güncelleme sırasında bir hata oluştu.");
+            return View(model);
         }
     }
 } 

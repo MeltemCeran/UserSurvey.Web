@@ -25,7 +25,8 @@ namespace UserInsightSurvey.Controllers
         [HttpGet]
         public async Task<IActionResult> Index()
         {
-            var questions = await _surveyManager.GetSurveyWithOptionsAsync();
+            var user = await _userManager.GetUserAsync(User);
+            var questions = await _surveyManager.GetSurveyWithOptionsAndUserAnswersAsync(user.Id);
             return View(questions);
         }
 
@@ -36,8 +37,16 @@ namespace UserInsightSurvey.Controllers
             var user = await _userManager.GetUserAsync(User);
             if (user == null)
                 return Unauthorized();
-
-            await _surveyManager.SaveAnswersAsync(model, user.Id);
+            try
+            {
+                await _surveyManager.SaveAnswersAsync(model, user.Id);
+            }
+            catch (System.InvalidOperationException ex)
+            {
+                ModelState.AddModelError("", ex.Message);
+                var questions = await _surveyManager.GetSurveyWithOptionsAsync();
+                return View(questions);
+            }
             return RedirectToAction("Index", "Profile");
         }
 

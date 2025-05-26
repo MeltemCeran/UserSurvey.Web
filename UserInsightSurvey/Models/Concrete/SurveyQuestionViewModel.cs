@@ -1,4 +1,4 @@
-﻿using UserInsightSurvey.Common;
+﻿using UserInsightSurvey.Common.Enums;
 
 namespace UserInsightSurvey.Models.Concrete
 {

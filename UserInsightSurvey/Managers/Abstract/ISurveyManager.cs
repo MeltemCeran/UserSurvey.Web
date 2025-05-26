@@ -8,5 +8,6 @@ namespace UserInsightSurvey.Managers.Abstract
     {
         Task SaveAnswersAsync(List<SurveyQuestionViewModel> questions, string userId);
         Task<List<SurveyQuestionViewModel>> GetSurveyWithOptionsAsync();
+        Task<List<SurveyQuestionViewModel>> GetSurveyWithOptionsAndUserAnswersAsync(string userId);
     }
 } 

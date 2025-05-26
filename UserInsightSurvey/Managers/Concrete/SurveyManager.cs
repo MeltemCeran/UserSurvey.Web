@@ -1,10 +1,8 @@
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using UserInsightSurvey.Data.Concrete;
 using UserInsightSurvey.Managers.Abstract;
 using UserInsightSurvey.Repositories.Abstract;
 using UserInsightSurvey.Models.Concrete;
+using UserInsightSurvey.Common.Enums;
 
 namespace UserInsightSurvey.Managers.Concrete
 {
@@ -22,6 +20,13 @@ namespace UserInsightSurvey.Managers.Concrete
         // Kullanıcının verdiği cevapları veritabanına kaydeder
         public async Task SaveAnswersAsync(List<SurveyQuestionViewModel> questions, string userId)
         {
+            // Kullanıcı daha önce cevapladıysa tekrar kaydetme
+            var existingAnswers = _answerRepository.GetByUserId(userId);
+            if (existingAnswers != null && existingAnswers.Any())
+            {
+                throw new System.InvalidOperationException("Bu anketi zaten cevapladınız. Birden fazla kez cevaplayamazsınız.");
+            }
+
             var answers = new List<Answer>();
             foreach (var question in questions)
             {
@@ -100,6 +105,50 @@ namespace UserInsightSurvey.Managers.Concrete
                 result.Add(viewModel);
             }
             // Tüm soruları ve seçenekleri içeren listeyi döndürüyoruz
+            return result;
+        }
+
+        public async Task<List<SurveyQuestionViewModel>> GetSurveyWithOptionsAndUserAnswersAsync(string userId)
+        {
+            var questions = _questionRepository.GetAll().ToList();
+            var userAnswers = _answerRepository.GetByUserId(userId).ToList();
+            var result = new List<SurveyQuestionViewModel>();
+
+            foreach (var question in questions)
+            {
+                var options = question.Options
+                    .Where(o => o.DeletedDate == null)
+                    .Select(o => new OptionViewModel
+                    {
+                        Id = o.Id,
+                        Content = o.Content
+                    }).ToList();
+
+                var viewModel = new SurveyQuestionViewModel
+                {
+                    QuestionId = question.Id,
+                    Content = question.Content,
+                    QuestionType = question.QuestionType,
+                    Options = options
+                };
+
+                // Cevapları doldur
+                var answersForQuestion = userAnswers.Where(a => a.QuestionId == question.Id).ToList();
+                if (question.QuestionType == QuestionType.SingleChoice)
+                {
+                    viewModel.SelectedOptionId = answersForQuestion.FirstOrDefault()?.OptionId;
+                }
+                else if (question.QuestionType == QuestionType.MultipleChoice)
+                {
+                    viewModel.SelectedOptionIds = answersForQuestion.Select(a => a.OptionId ?? 0).ToList();
+                }
+                else if (question.QuestionType == QuestionType.Text)
+                {
+                    viewModel.AnswerText = answersForQuestion.FirstOrDefault()?.Content;
+                }
+
+                result.Add(viewModel);
+            }
             return result;
         }
     }

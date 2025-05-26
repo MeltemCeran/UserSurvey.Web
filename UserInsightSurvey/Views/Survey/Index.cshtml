@@ -1,4 +1,5 @@
 @using UserInsightSurvey.Common
+@using UserInsightSurvey.Common.Enums
 @model List<UserInsightSurvey.Models.Concrete.SurveyQuestionViewModel>
 
 @{
@@ -14,19 +15,6 @@
                 <div class="mb-4">
                     <input type="hidden" name="[@i].QuestionId" value="@Model[i].QuestionId" />
                     <label class="block font-semibold text-gray-800 mb-2">@(i + 1). @Model[i].Content</label>
-                    <div class="text-xs text-gray-400 mb-1">Tip: @Model[i].QuestionType (@((int)Model[i].QuestionType))</div>
-                    <div class="text-xs text-blue-500 mb-1">Seçenek sayısı: @Model[i].Options?.Count</div>
-                    @if (Model[i].Options != null && Model[i].Options.Count > 0)
-                    {
-                        foreach (var option in Model[i].Options)
-                        {
-                            <div>@option.Content (@option.Id)</div>
-                        }
-                    }
-                    else
-                    {
-                        <div class="text-red-500">Seçenek yok!</div>
-                    }
                     @switch (Model[i].QuestionType)
                     {
                         case QuestionType.SingleChoice:
@@ -38,7 +26,8 @@
                                                name="[@i].SelectedOptionId"
                                                value="@option.Id"
                                                id="q@Model[i].QuestionId-opt@option.Id"
-                                               class="accent-indigo-600 w-5 h-5" />
+                                               class="accent-indigo-600 w-5 h-5"
+                                               @(Model[i].SelectedOptionId == option.Id ? "checked" : "") />
                                         <span class="text-gray-700">@option.Content</span>
                                     </label>
                                 }
@@ -53,17 +42,18 @@
                                                name="[@i].SelectedOptionIds"
                                                value="@option.Id"
                                                id="q@Model[i].QuestionId-opt@option.Id"
-                                               class="accent-purple-600 w-5 h-5" />
+                                               class="accent-purple-600 w-5 h-5"
+                                               @(Model[i].SelectedOptionIds != null && Model[i].SelectedOptionIds.Contains(option.Id) ? "checked" : "") />
                                         <span class="text-gray-700">@option.Content</span>
                                     </label>
                                 }
                             </div>
                             break;
                         case QuestionType.Text:
-                            <textarea name="[@i].AnswerText" class="block w-full rounded border border-gray-300 bg-white px-3 py-2 text-base text-gray-900 placeholder:text-gray-400 focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500" rows="2"></textarea>
+                            <textarea name="[@i].AnswerText" class="block w-full rounded border border-gray-300 bg-white px-3 py-2 text-base text-gray-900 placeholder:text-gray-400 focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500" rows="2">@Model[i].AnswerText</textarea>
                             break;
                         default:
-                            <div class="text-red-500">Bilinmeyen tip: @Model[i].QuestionType</div>
+                            <div class="text-red-500">Bilinmeyen tip</div>
                             break;
                     }
                 </div>

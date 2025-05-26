@@ -7,6 +7,7 @@ using UserInsightSurvey.Managers.Abstract;
 using UserInsightSurvey.Managers.Concrete;
 using UserInsightSurvey.Repositories.Abstract;
 using UserInsightSurvey.Repositories.Concrete;
+using UserInsightSurvey.Common.Errors;
 
 namespace UserInsightSurvey
 {
@@ -27,13 +28,15 @@ namespace UserInsightSurvey
 				options.Password.RequireNonAlphanumeric = true;
 				options.Password.RequiredLength = 6;
 			})
-			.AddEntityFrameworkStores<UserSurveyDbContext>();
+			.AddEntityFrameworkStores<UserSurveyDbContext>()
+			.AddErrorDescriber<CustomIdentityErrorDescriber>();
 
 			// Add services to the container.
 			builder.Services.AddControllersWithViews();
 			builder.Services.AddScoped<IUserRegisterManager, UserRegisterManager>();
 			builder.Services.AddScoped<ISurveyManager, SurveyManager>();
             builder.Services.AddScoped<IProfileManager, ProfileManager>();
+            builder.Services.AddScoped<IDashboardManager, DashboardManager>();
 			builder.Services.AddScoped<IUserRepository, UserRepository>();
 			builder.Services.AddScoped<IQuestionRepository, QuestionRepository>();
 			builder.Services.AddScoped<IOptionRepository, OptionRepository>();

@@ -42,5 +42,10 @@ namespace UserInsightSurvey.Repositories.Concrete
                 _context.SaveChanges();
             }
         }
+
+        public List<Option> GetOptionsByQuestionId(int questionId)
+        {
+            return _context.Options.Where(o => o.QuestionId == questionId && o.DeletedDate == null).ToList();
+        }
     }
 } 

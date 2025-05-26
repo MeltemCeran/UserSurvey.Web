@@ -54,16 +54,32 @@ namespace UserInsightSurvey.Controllers
         }
 
         [HttpPost]
-        public IActionResult Login(LoginViewModel model)
+        public async Task<IActionResult> Login(LoginViewModel model)
         {
             if (!ModelState.IsValid)
             {
                 ViewData["ErrorMessage"] = "Lütfen tüm alanları doldurun.";
                 return View(model);
             }
-            // Giriş işlemleri burada yapılacak
+
+            var result = await _signInManager.PasswordSignInAsync(
+                model.Email, model.Password, model.RememberMe, lockoutOnFailure: false);
+
+            if (result.Succeeded)
+            {
+                return RedirectToAction("Index", "Profile");
+            }
+
             ViewData["ErrorMessage"] = "Geçersiz giriş.";
             return View(model);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Logout()
+        {
+            await _signInManager.SignOutAsync();
+            return RedirectToAction("Login", "Account");
         }
     }
 }

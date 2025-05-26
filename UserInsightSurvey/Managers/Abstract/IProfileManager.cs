@@ -6,6 +6,6 @@ namespace UserInsightSurvey.Managers.Abstract
     public interface IProfileManager
     {
         Task<ProfileViewModel> GetProfileWithAnswersAsync(string email);
-        Task<bool> UpdateProfileAsync(ProfileViewModel model);
+        Task<(bool Success, string ErrorMessage)> UpdateProfileAsync(ProfileViewModel model);
     }
 } 

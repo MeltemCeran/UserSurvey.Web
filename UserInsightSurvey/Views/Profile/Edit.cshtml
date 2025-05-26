@@ -1,0 +1,60 @@
+@model UserInsightSurvey.Models.Concrete.ProfileViewModel
+@{
+    ViewData["Title"] = "Profilimi Düzenle";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="min-h-screen flex items-center justify-center bg-gray-100 py-8">
+    <div class="w-full max-w-lg bg-white rounded-lg shadow-lg p-6 md:p-10">
+        <h2 class="text-2xl font-bold text-indigo-700 mb-8 text-center">Profilimi Düzenle</h2>
+        @if (!ViewData.ModelState.IsValid)
+        {
+            <div class="mb-4 p-2 bg-red-100 text-red-700 rounded text-sm">
+                @foreach (var error in ViewData.ModelState.Values.SelectMany(v => v.Errors))
+                {
+                    <div>@error.ErrorMessage</div>
+                }
+            </div>
+        }
+        <form asp-action="Edit" method="post" enctype="multipart/form-data" class="space-y-5">
+            <div>
+                <label asp-for="Name" class="block text-sm font-medium text-gray-900 mb-1"></label>
+                <input asp-for="Name" class="block w-full rounded border border-gray-300 bg-white px-3 py-2 text-base text-gray-900 focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500" />
+                <span asp-validation-for="Name" class="text-xs text-red-600"></span>
+            </div>
+            <div>
+                <label asp-for="Surname" class="block text-sm font-medium text-gray-900 mb-1"></label>
+                <input asp-for="Surname" class="block w-full rounded border border-gray-300 bg-white px-3 py-2 text-base text-gray-900 focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500" />
+                <span asp-validation-for="Surname" class="text-xs text-red-600"></span>
+            </div>
+            <div>
+                <label asp-for="Email" class="block text-sm font-medium text-gray-900 mb-1"></label>
+                <input asp-for="Email" class="block w-full rounded border border-gray-300 bg-white px-3 py-2 text-base text-gray-900 focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500" />
+                <span asp-validation-for="Email" class="text-xs text-red-600"></span>
+            </div>
+            <div>
+                <label class="block text-sm font-medium text-gray-900 mb-1">Yeni Şifre</label>
+                <input asp-for="Password" type="password" autocomplete="new-password" class="block w-full rounded border border-gray-300 bg-white px-3 py-2 text-base text-gray-900 focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500" />
+                <span asp-validation-for="Password" class="text-xs text-red-600"></span>
+            </div>
+            <div>
+                <label class="block text-sm font-medium text-gray-900 mb-1">Şifre Tekrar</label>
+                <input asp-for="ConfirmPassword" type="password" autocomplete="new-password" class="block w-full rounded border border-gray-300 bg-white px-3 py-2 text-base text-gray-900 focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500" />
+                <span asp-validation-for="ConfirmPassword" class="text-xs text-red-600"></span>
+                <div class="text-xs text-gray-500 mt-1 w-full block text-center font-medium">Şifreniz en az 6 karakter olmalı, büyük harf, küçük harf, rakam ve özel karakter içermelidir.</div>
+            </div>
+            <div>
+                <label asp-for="CvFile" class="block text-sm font-medium text-gray-900 mb-1">CV Yükle</label>
+                <input asp-for="CvFile" type="file" class="block w-full rounded border border-gray-300 bg-white px-3 py-2 text-base text-gray-900 focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500" />
+                <span asp-validation-for="CvFile" class="text-xs text-red-600"></span>
+                @if (!string.IsNullOrEmpty(Model.CvFilePath))
+                {
+                    <div class="mt-1"><a href="@Model.CvFilePath" target="_blank" class="text-indigo-600 hover:underline text-xs">Mevcut CV'yi Görüntüle</a></div>
+                }
+            </div>
+            <div class="flex justify-end gap-2 mt-4">
+                <a href="/Profile/Index" class="px-4 py-2 bg-gray-200 text-gray-700 rounded hover:bg-gray-300">Vazgeç</a>
+                <button type="submit" class="px-4 py-2 bg-indigo-600 text-white rounded hover:bg-indigo-700">Kaydet</button>
+            </div>
+        </form>
+    </div>
+</div> 

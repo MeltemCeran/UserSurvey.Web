@@ -6,5 +6,6 @@ namespace UserInsightSurvey.Models.Concrete
     {
         public string QuestionText { get; set; }
         public string AnswerText { get; set; }
+        public string OptionContent { get; set; }
     }
 } 

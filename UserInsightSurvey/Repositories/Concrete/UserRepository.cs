@@ -39,5 +39,10 @@ namespace UserInsightSurvey.Repositories.Concrete
 				_context.SaveChanges();
 			}
 		}
+
+		public int GetTotalUserCount() => _context.Users.Count(u => u.Deleted == null);
+		public int GetUserWithAnswersCount() => _context.Answers.Select(a => a.UserId).Distinct().Count();
+
+		public User GetByEmail(string email) => _context.Users.FirstOrDefault(u => u.Email == email && u.Deleted == null);
 	}
 }

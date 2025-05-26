@@ -1,4 +1,4 @@
-﻿namespace UserInsightSurvey.Common
+﻿namespace UserInsightSurvey.Common.Enums
 {
 	public enum UserType
 	{

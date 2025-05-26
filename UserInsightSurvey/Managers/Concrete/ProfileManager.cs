@@ -1,43 +1,62 @@
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.EntityFrameworkCore;
-using UserInsightSurvey.Context;
+using Microsoft.AspNetCore.Identity;
 using UserInsightSurvey.Managers.Abstract;
 using UserInsightSurvey.Models.Concrete;
-using Microsoft.AspNetCore.Http;
-using System.IO;
 using UserInsightSurvey.Repositories.Abstract;
-using Microsoft.AspNetCore.Identity;
+using UserInsightSurvey.Data.Concrete;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace UserInsightSurvey.Managers.Concrete
 {
     public class ProfileManager : IProfileManager
     {
-        private readonly UserSurveyDbContext _context;
         private readonly IUserRepository _userRepository;
+        private readonly IQuestionRepository _questionRepository;
+        private readonly IAnswerRepository _answerRepository;
         private readonly UserManager<User> _userManager;
 
-        public ProfileManager(UserSurveyDbContext context, IUserRepository userRepository, UserManager<User> userManager)
+        public ProfileManager(IUserRepository userRepository, IQuestionRepository questionRepository, IAnswerRepository answerRepository, UserManager<User> userManager)
         {
-            _context = context;
             _userRepository = userRepository;
+            _questionRepository = questionRepository;
+            _answerRepository = answerRepository;
             _userManager = userManager;
         }
 
         public async Task<ProfileViewModel> GetProfileWithAnswersAsync(string email)
         {
-            var user = await _context.Users.FirstOrDefaultAsync(u => u.Email == email);
+            var user = _userRepository.GetByEmail(email);
             if (user == null) return null;
 
-            var answers = await _context.Answers
-                .Where(a => a.UserId == user.Id)
-                .Include(a => a.Question)
-                .Select(a => new UserAnswerViewModel
+            var allQuestions = _questionRepository.GetActiveQuestions();
+            var answers = _answerRepository.GetAnswersByUserId(user.Id);
+
+            var answerViewModels = new List<UserAnswerViewModel>();
+            foreach (var question in allQuestions)
+            {
+                var userAnswers = answers.Where(a => a.QuestionId == question.Id).ToList();
+                if (userAnswers.Any())
                 {
-                    QuestionText = a.Question.Content,
-                    AnswerText = a.Content
-                })
-                .ToListAsync();
+                    foreach (var ans in userAnswers)
+                    {
+                        answerViewModels.Add(new UserAnswerViewModel
+                        {
+                            QuestionText = question.Content,
+                            AnswerText = ans.Content,
+                            OptionContent = ans.Option != null ? ans.Option.Content : null
+                        });
+                    }
+                }
+                else
+                {
+                    answerViewModels.Add(new UserAnswerViewModel
+                    {
+                        QuestionText = question.Content,
+                        AnswerText = "-",
+                        OptionContent = "-"
+                    });
+                }
+            }
 
             return new ProfileViewModel
             {
@@ -45,14 +64,14 @@ namespace UserInsightSurvey.Managers.Concrete
                 Surname = user.Surname,
                 Email = user.Email,
                 CvFilePath = user.CvFilePath,
-                Answers = answers
+                Answers = answerViewModels
             };
         }
 
-        public async Task<bool> UpdateProfileAsync(ProfileViewModel model)
+        public async Task<(bool Success, string ErrorMessage)> UpdateProfileAsync(ProfileViewModel model)
         {
-            var user = await _context.Users.FirstOrDefaultAsync(u => u.Email == model.Email);
-            if (user == null) return false;
+            var user = _userRepository.GetByEmail(model.Email);
+            if (user == null) return (false, "Kullanıcı bulunamadı.");
 
             user.Name = model.Name;
             user.Surname = model.Surname;
@@ -63,12 +82,16 @@ namespace UserInsightSurvey.Managers.Concrete
             {
                 var token = await _userManager.GeneratePasswordResetTokenAsync(user);
                 var result = await _userManager.ResetPasswordAsync(user, token, model.Password);
-                if (!result.Succeeded) return false;
+                if (!result.Succeeded)
+                {
+                    var errorMsg = string.Join("; ", result.Errors.Select(e => e.Description));
+                    return (false, errorMsg);
+                }
             }
 
             if (model.CvFile != null && model.CvFile.Length > 0)
             {
-                var uploadsFolder = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "uploads");
+                var uploadsFolder = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "uploads", "cv");
                 Directory.CreateDirectory(uploadsFolder);
                 var uniqueFileName = Guid.NewGuid().ToString() + Path.GetExtension(model.CvFile.FileName);
                 var filePath = Path.Combine(uploadsFolder, uniqueFileName);
@@ -76,11 +99,11 @@ namespace UserInsightSurvey.Managers.Concrete
                 {
                     await model.CvFile.CopyToAsync(stream);
                 }
-                user.CvFilePath = "/uploads/" + uniqueFileName;
+                user.CvFilePath = "/uploads/cv/" + uniqueFileName;
             }
 
             _userRepository.Update(user);
-            return true;
+            return (true, null);
         }
     }
 } 

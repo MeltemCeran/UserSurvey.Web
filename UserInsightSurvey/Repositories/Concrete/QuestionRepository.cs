@@ -47,5 +47,8 @@ namespace UserInsightSurvey.Repositories.Concrete
                 _context.SaveChanges();
             }
         }
+
+        public int GetActiveQuestionCount() => _context.Questions.Count(q => q.DeletedDate == null);
+        public List<Question> GetActiveQuestions() => _context.Questions.Where(q => q.DeletedDate == null).ToList();
     }
 } 

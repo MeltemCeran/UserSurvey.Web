@@ -191,6 +191,8 @@ namespace UserInsightSurvey.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("OptionId");
+
                     b.HasIndex("QuestionId");
 
                     b.HasIndex("UserId");
@@ -202,14 +204,14 @@ namespace UserInsightSurvey.Migrations
                         {
                             Id = 1,
                             Content = "LINQ",
-                            CreatedDate = new DateTime(2025, 5, 25, 12, 10, 29, 308, DateTimeKind.Local).AddTicks(680),
+                            CreatedDate = new DateTime(2025, 5, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             QuestionId = 1,
                             UserId = "252d1809-cd07-4ebd-87d1-83cefac3b78c"
                         },
                         new
                         {
                             Id = 2,
-                            CreatedDate = new DateTime(2025, 5, 25, 12, 10, 29, 308, DateTimeKind.Local).AddTicks(704),
+                            CreatedDate = new DateTime(2025, 5, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             OptionId = 1,
                             QuestionId = 2,
                             UserId = "252d1809-cd07-4ebd-87d1-83cefac3b78c"
@@ -217,7 +219,7 @@ namespace UserInsightSurvey.Migrations
                         new
                         {
                             Id = 3,
-                            CreatedDate = new DateTime(2025, 5, 25, 12, 10, 29, 308, DateTimeKind.Local).AddTicks(706),
+                            CreatedDate = new DateTime(2025, 5, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             OptionId = 3,
                             QuestionId = 2,
                             UserId = "252d1809-cd07-4ebd-87d1-83cefac3b78c"
@@ -225,7 +227,7 @@ namespace UserInsightSurvey.Migrations
                         new
                         {
                             Id = 4,
-                            CreatedDate = new DateTime(2025, 5, 25, 12, 10, 29, 308, DateTimeKind.Local).AddTicks(707),
+                            CreatedDate = new DateTime(2025, 5, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             OptionId = 5,
                             QuestionId = 3,
                             UserId = "252d1809-cd07-4ebd-87d1-83cefac3b78c"
@@ -234,14 +236,14 @@ namespace UserInsightSurvey.Migrations
                         {
                             Id = 5,
                             Content = "Code First ile migration yönetimi deneyimim var.",
-                            CreatedDate = new DateTime(2025, 5, 25, 12, 10, 29, 308, DateTimeKind.Local).AddTicks(708),
+                            CreatedDate = new DateTime(2025, 5, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             QuestionId = 4,
                             UserId = "252d1809-cd07-4ebd-87d1-83cefac3b78c"
                         },
                         new
                         {
                             Id = 6,
-                            CreatedDate = new DateTime(2025, 5, 25, 12, 10, 29, 308, DateTimeKind.Local).AddTicks(710),
+                            CreatedDate = new DateTime(2025, 5, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             OptionId = 9,
                             QuestionId = 5,
                             UserId = "252d1809-cd07-4ebd-87d1-83cefac3b78c"
@@ -249,7 +251,7 @@ namespace UserInsightSurvey.Migrations
                         new
                         {
                             Id = 7,
-                            CreatedDate = new DateTime(2025, 5, 25, 12, 10, 29, 308, DateTimeKind.Local).AddTicks(711),
+                            CreatedDate = new DateTime(2025, 5, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             OptionId = 12,
                             QuestionId = 5,
                             UserId = "252d1809-cd07-4ebd-87d1-83cefac3b78c"
@@ -258,14 +260,14 @@ namespace UserInsightSurvey.Migrations
                         {
                             Id = 8,
                             Content = ".NET Core platform bağımsızdır.",
-                            CreatedDate = new DateTime(2025, 5, 25, 12, 10, 29, 308, DateTimeKind.Local).AddTicks(712),
+                            CreatedDate = new DateTime(2025, 5, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             QuestionId = 6,
                             UserId = "252d1809-cd07-4ebd-87d1-83cefac3b78c"
                         },
                         new
                         {
                             Id = 9,
-                            CreatedDate = new DateTime(2025, 5, 25, 12, 10, 29, 308, DateTimeKind.Local).AddTicks(713),
+                            CreatedDate = new DateTime(2025, 5, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             OptionId = 13,
                             QuestionId = 7,
                             UserId = "252d1809-cd07-4ebd-87d1-83cefac3b78c"
@@ -273,7 +275,7 @@ namespace UserInsightSurvey.Migrations
                         new
                         {
                             Id = 10,
-                            CreatedDate = new DateTime(2025, 5, 25, 12, 10, 29, 308, DateTimeKind.Local).AddTicks(715),
+                            CreatedDate = new DateTime(2025, 5, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             OptionId = 16,
                             QuestionId = 7,
                             UserId = "252d1809-cd07-4ebd-87d1-83cefac3b78c"
@@ -282,14 +284,14 @@ namespace UserInsightSurvey.Migrations
                         {
                             Id = 11,
                             Content = "JWT ile kimlik doğrulama kullanırım.",
-                            CreatedDate = new DateTime(2025, 5, 25, 12, 10, 29, 308, DateTimeKind.Local).AddTicks(716),
+                            CreatedDate = new DateTime(2025, 5, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             QuestionId = 8,
                             UserId = "252d1809-cd07-4ebd-87d1-83cefac3b78c"
                         },
                         new
                         {
                             Id = 12,
-                            CreatedDate = new DateTime(2025, 5, 25, 12, 10, 29, 308, DateTimeKind.Local).AddTicks(718),
+                            CreatedDate = new DateTime(2025, 5, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             OptionId = 17,
                             QuestionId = 9,
                             UserId = "252d1809-cd07-4ebd-87d1-83cefac3b78c"
@@ -297,10 +299,322 @@ namespace UserInsightSurvey.Migrations
                         new
                         {
                             Id = 13,
-                            CreatedDate = new DateTime(2025, 5, 25, 12, 10, 29, 308, DateTimeKind.Local).AddTicks(719),
+                            CreatedDate = new DateTime(2025, 5, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             OptionId = 23,
                             QuestionId = 10,
                             UserId = "252d1809-cd07-4ebd-87d1-83cefac3b78c"
+                        },
+                        new
+                        {
+                            Id = 101,
+                            Content = "Delegates ve Events",
+                            CreatedDate = new DateTime(2025, 5, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            QuestionId = 1,
+                            UserId = "11111111-aaaa-bbbb-cccc-111111111111"
+                        },
+                        new
+                        {
+                            Id = 102,
+                            CreatedDate = new DateTime(2025, 5, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            OptionId = 1,
+                            QuestionId = 2,
+                            UserId = "11111111-aaaa-bbbb-cccc-111111111111"
+                        },
+                        new
+                        {
+                            Id = 103,
+                            CreatedDate = new DateTime(2025, 5, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            OptionId = 3,
+                            QuestionId = 2,
+                            UserId = "11111111-aaaa-bbbb-cccc-111111111111"
+                        },
+                        new
+                        {
+                            Id = 104,
+                            CreatedDate = new DateTime(2025, 5, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            OptionId = 5,
+                            QuestionId = 3,
+                            UserId = "11111111-aaaa-bbbb-cccc-111111111111"
+                        },
+                        new
+                        {
+                            Id = 105,
+                            Content = "Migration ve Code First tecrübem var.",
+                            CreatedDate = new DateTime(2025, 5, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            QuestionId = 4,
+                            UserId = "11111111-aaaa-bbbb-cccc-111111111111"
+                        },
+                        new
+                        {
+                            Id = 106,
+                            CreatedDate = new DateTime(2025, 5, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            OptionId = 9,
+                            QuestionId = 5,
+                            UserId = "11111111-aaaa-bbbb-cccc-111111111111"
+                        },
+                        new
+                        {
+                            Id = 107,
+                            CreatedDate = new DateTime(2025, 5, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            OptionId = 12,
+                            QuestionId = 5,
+                            UserId = "11111111-aaaa-bbbb-cccc-111111111111"
+                        },
+                        new
+                        {
+                            Id = 108,
+                            Content = ".NET Core platform bağımsızdır.",
+                            CreatedDate = new DateTime(2025, 5, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            QuestionId = 6,
+                            UserId = "11111111-aaaa-bbbb-cccc-111111111111"
+                        },
+                        new
+                        {
+                            Id = 109,
+                            CreatedDate = new DateTime(2025, 5, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            OptionId = 13,
+                            QuestionId = 7,
+                            UserId = "11111111-aaaa-bbbb-cccc-111111111111"
+                        },
+                        new
+                        {
+                            Id = 110,
+                            CreatedDate = new DateTime(2025, 5, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            OptionId = 16,
+                            QuestionId = 7,
+                            UserId = "11111111-aaaa-bbbb-cccc-111111111111"
+                        },
+                        new
+                        {
+                            Id = 111,
+                            Content = "JWT ile kimlik doğrulama kullanırım.",
+                            CreatedDate = new DateTime(2025, 5, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            QuestionId = 8,
+                            UserId = "11111111-aaaa-bbbb-cccc-111111111111"
+                        },
+                        new
+                        {
+                            Id = 112,
+                            CreatedDate = new DateTime(2025, 5, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            OptionId = 17,
+                            QuestionId = 9,
+                            UserId = "11111111-aaaa-bbbb-cccc-111111111111"
+                        },
+                        new
+                        {
+                            Id = 113,
+                            CreatedDate = new DateTime(2025, 5, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            OptionId = 23,
+                            QuestionId = 10,
+                            UserId = "11111111-aaaa-bbbb-cccc-111111111111"
+                        },
+                        new
+                        {
+                            Id = 201,
+                            Content = "LINQ ve Lambda Expressions",
+                            CreatedDate = new DateTime(2025, 5, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            QuestionId = 1,
+                            UserId = "22222222-aaaa-bbbb-cccc-222222222222"
+                        },
+                        new
+                        {
+                            Id = 202,
+                            CreatedDate = new DateTime(2025, 5, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            OptionId = 2,
+                            QuestionId = 2,
+                            UserId = "22222222-aaaa-bbbb-cccc-222222222222"
+                        },
+                        new
+                        {
+                            Id = 203,
+                            CreatedDate = new DateTime(2025, 5, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            OptionId = 4,
+                            QuestionId = 2,
+                            UserId = "22222222-aaaa-bbbb-cccc-222222222222"
+                        },
+                        new
+                        {
+                            Id = 204,
+                            CreatedDate = new DateTime(2025, 5, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            OptionId = 6,
+                            QuestionId = 3,
+                            UserId = "22222222-aaaa-bbbb-cccc-222222222222"
+                        },
+                        new
+                        {
+                            Id = 205,
+                            Content = "Database First ile çalıştım.",
+                            CreatedDate = new DateTime(2025, 5, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            QuestionId = 4,
+                            UserId = "22222222-aaaa-bbbb-cccc-222222222222"
+                        },
+                        new
+                        {
+                            Id = 206,
+                            CreatedDate = new DateTime(2025, 5, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            OptionId = 10,
+                            QuestionId = 5,
+                            UserId = "22222222-aaaa-bbbb-cccc-222222222222"
+                        },
+                        new
+                        {
+                            Id = 207,
+                            CreatedDate = new DateTime(2025, 5, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            OptionId = 11,
+                            QuestionId = 5,
+                            UserId = "22222222-aaaa-bbbb-cccc-222222222222"
+                        },
+                        new
+                        {
+                            Id = 208,
+                            Content = ".NET Core açık kaynaklıdır.",
+                            CreatedDate = new DateTime(2025, 5, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            QuestionId = 6,
+                            UserId = "22222222-aaaa-bbbb-cccc-222222222222"
+                        },
+                        new
+                        {
+                            Id = 209,
+                            CreatedDate = new DateTime(2025, 5, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            OptionId = 14,
+                            QuestionId = 7,
+                            UserId = "22222222-aaaa-bbbb-cccc-222222222222"
+                        },
+                        new
+                        {
+                            Id = 210,
+                            CreatedDate = new DateTime(2025, 5, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            OptionId = 15,
+                            QuestionId = 7,
+                            UserId = "22222222-aaaa-bbbb-cccc-222222222222"
+                        },
+                        new
+                        {
+                            Id = 211,
+                            Content = "OAuth2 ile güvenlik sağlarım.",
+                            CreatedDate = new DateTime(2025, 5, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            QuestionId = 8,
+                            UserId = "22222222-aaaa-bbbb-cccc-222222222222"
+                        },
+                        new
+                        {
+                            Id = 212,
+                            CreatedDate = new DateTime(2025, 5, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            OptionId = 18,
+                            QuestionId = 9,
+                            UserId = "22222222-aaaa-bbbb-cccc-222222222222"
+                        },
+                        new
+                        {
+                            Id = 213,
+                            CreatedDate = new DateTime(2025, 5, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            OptionId = 24,
+                            QuestionId = 10,
+                            UserId = "22222222-aaaa-bbbb-cccc-222222222222"
+                        },
+                        new
+                        {
+                            Id = 301,
+                            Content = "Async/Await kullanımı",
+                            CreatedDate = new DateTime(2025, 5, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            QuestionId = 1,
+                            UserId = "33333333-aaaa-bbbb-cccc-333333333333"
+                        },
+                        new
+                        {
+                            Id = 302,
+                            CreatedDate = new DateTime(2025, 5, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            OptionId = 1,
+                            QuestionId = 2,
+                            UserId = "33333333-aaaa-bbbb-cccc-333333333333"
+                        },
+                        new
+                        {
+                            Id = 303,
+                            CreatedDate = new DateTime(2025, 5, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            OptionId = 2,
+                            QuestionId = 2,
+                            UserId = "33333333-aaaa-bbbb-cccc-333333333333"
+                        },
+                        new
+                        {
+                            Id = 304,
+                            CreatedDate = new DateTime(2025, 5, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            OptionId = 7,
+                            QuestionId = 3,
+                            UserId = "33333333-aaaa-bbbb-cccc-333333333333"
+                        },
+                        new
+                        {
+                            Id = 305,
+                            Content = "EF Core ile performans optimizasyonu yaptım.",
+                            CreatedDate = new DateTime(2025, 5, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            QuestionId = 4,
+                            UserId = "33333333-aaaa-bbbb-cccc-333333333333"
+                        },
+                        new
+                        {
+                            Id = 306,
+                            CreatedDate = new DateTime(2025, 5, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            OptionId = 9,
+                            QuestionId = 5,
+                            UserId = "33333333-aaaa-bbbb-cccc-333333333333"
+                        },
+                        new
+                        {
+                            Id = 307,
+                            CreatedDate = new DateTime(2025, 5, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            OptionId = 10,
+                            QuestionId = 5,
+                            UserId = "33333333-aaaa-bbbb-cccc-333333333333"
+                        },
+                        new
+                        {
+                            Id = 308,
+                            Content = ".NET Core hızlıdır.",
+                            CreatedDate = new DateTime(2025, 5, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            QuestionId = 6,
+                            UserId = "33333333-aaaa-bbbb-cccc-333333333333"
+                        },
+                        new
+                        {
+                            Id = 309,
+                            CreatedDate = new DateTime(2025, 5, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            OptionId = 13,
+                            QuestionId = 7,
+                            UserId = "33333333-aaaa-bbbb-cccc-333333333333"
+                        },
+                        new
+                        {
+                            Id = 310,
+                            CreatedDate = new DateTime(2025, 5, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            OptionId = 15,
+                            QuestionId = 7,
+                            UserId = "33333333-aaaa-bbbb-cccc-333333333333"
+                        },
+                        new
+                        {
+                            Id = 311,
+                            Content = "HTTPS zorunlu kullanırım.",
+                            CreatedDate = new DateTime(2025, 5, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            QuestionId = 8,
+                            UserId = "33333333-aaaa-bbbb-cccc-333333333333"
+                        },
+                        new
+                        {
+                            Id = 312,
+                            CreatedDate = new DateTime(2025, 5, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            OptionId = 19,
+                            QuestionId = 9,
+                            UserId = "33333333-aaaa-bbbb-cccc-333333333333"
+                        },
+                        new
+                        {
+                            Id = 313,
+                            CreatedDate = new DateTime(2025, 5, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            OptionId = 25,
+                            QuestionId = 10,
+                            UserId = "33333333-aaaa-bbbb-cccc-333333333333"
                         });
                 });
 
@@ -339,175 +653,175 @@ namespace UserInsightSurvey.Migrations
                         {
                             Id = 1,
                             Content = "ASP.NET Core",
-                            CreatedDate = new DateTime(2025, 5, 25, 12, 10, 29, 214, DateTimeKind.Local).AddTicks(8789),
+                            CreatedDate = new DateTime(2025, 5, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             QuestionId = 2
                         },
                         new
                         {
                             Id = 2,
                             Content = "WinForms",
-                            CreatedDate = new DateTime(2025, 5, 25, 12, 10, 29, 214, DateTimeKind.Local).AddTicks(8794),
+                            CreatedDate = new DateTime(2025, 5, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             QuestionId = 2
                         },
                         new
                         {
                             Id = 3,
                             Content = "WPF",
-                            CreatedDate = new DateTime(2025, 5, 25, 12, 10, 29, 214, DateTimeKind.Local).AddTicks(8795),
+                            CreatedDate = new DateTime(2025, 5, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             QuestionId = 2
                         },
                         new
                         {
                             Id = 4,
                             Content = "Blazor",
-                            CreatedDate = new DateTime(2025, 5, 25, 12, 10, 29, 214, DateTimeKind.Local).AddTicks(8797),
+                            CreatedDate = new DateTime(2025, 5, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             QuestionId = 2
                         },
                         new
                         {
                             Id = 5,
                             Content = "Visual Studio",
-                            CreatedDate = new DateTime(2025, 5, 25, 12, 10, 29, 214, DateTimeKind.Local).AddTicks(8798),
+                            CreatedDate = new DateTime(2025, 5, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             QuestionId = 3
                         },
                         new
                         {
                             Id = 6,
                             Content = "Rider",
-                            CreatedDate = new DateTime(2025, 5, 25, 12, 10, 29, 214, DateTimeKind.Local).AddTicks(8799),
+                            CreatedDate = new DateTime(2025, 5, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             QuestionId = 3
                         },
                         new
                         {
                             Id = 7,
                             Content = "VS Code",
-                            CreatedDate = new DateTime(2025, 5, 25, 12, 10, 29, 214, DateTimeKind.Local).AddTicks(8800),
+                            CreatedDate = new DateTime(2025, 5, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             QuestionId = 3
                         },
                         new
                         {
                             Id = 8,
                             Content = "Diğer",
-                            CreatedDate = new DateTime(2025, 5, 25, 12, 10, 29, 214, DateTimeKind.Local).AddTicks(8801),
+                            CreatedDate = new DateTime(2025, 5, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             QuestionId = 3
                         },
                         new
                         {
                             Id = 9,
                             Content = "MVC",
-                            CreatedDate = new DateTime(2025, 5, 25, 12, 10, 29, 214, DateTimeKind.Local).AddTicks(8803),
+                            CreatedDate = new DateTime(2025, 5, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             QuestionId = 5
                         },
                         new
                         {
                             Id = 10,
                             Content = "MVVM",
-                            CreatedDate = new DateTime(2025, 5, 25, 12, 10, 29, 214, DateTimeKind.Local).AddTicks(8804),
+                            CreatedDate = new DateTime(2025, 5, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             QuestionId = 5
                         },
                         new
                         {
                             Id = 11,
                             Content = "Onion Architecture",
-                            CreatedDate = new DateTime(2025, 5, 25, 12, 10, 29, 214, DateTimeKind.Local).AddTicks(8805),
+                            CreatedDate = new DateTime(2025, 5, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             QuestionId = 5
                         },
                         new
                         {
                             Id = 12,
                             Content = "Clean Architecture",
-                            CreatedDate = new DateTime(2025, 5, 25, 12, 10, 29, 214, DateTimeKind.Local).AddTicks(8806),
+                            CreatedDate = new DateTime(2025, 5, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             QuestionId = 5
                         },
                         new
                         {
                             Id = 13,
                             Content = "SQL Server",
-                            CreatedDate = new DateTime(2025, 5, 25, 12, 10, 29, 214, DateTimeKind.Local).AddTicks(8807),
+                            CreatedDate = new DateTime(2025, 5, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             QuestionId = 7
                         },
                         new
                         {
                             Id = 14,
                             Content = "PostgreSQL",
-                            CreatedDate = new DateTime(2025, 5, 25, 12, 10, 29, 214, DateTimeKind.Local).AddTicks(8808),
+                            CreatedDate = new DateTime(2025, 5, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             QuestionId = 7
                         },
                         new
                         {
                             Id = 15,
                             Content = "MySQL",
-                            CreatedDate = new DateTime(2025, 5, 25, 12, 10, 29, 214, DateTimeKind.Local).AddTicks(8809),
+                            CreatedDate = new DateTime(2025, 5, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             QuestionId = 7
                         },
                         new
                         {
                             Id = 16,
                             Content = "MongoDB",
-                            CreatedDate = new DateTime(2025, 5, 25, 12, 10, 29, 214, DateTimeKind.Local).AddTicks(8810),
+                            CreatedDate = new DateTime(2025, 5, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             QuestionId = 7
                         },
                         new
                         {
                             Id = 17,
                             Content = "Azure",
-                            CreatedDate = new DateTime(2025, 5, 25, 12, 10, 29, 214, DateTimeKind.Local).AddTicks(8811),
+                            CreatedDate = new DateTime(2025, 5, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             QuestionId = 9
                         },
                         new
                         {
                             Id = 18,
                             Content = "AWS",
-                            CreatedDate = new DateTime(2025, 5, 25, 12, 10, 29, 214, DateTimeKind.Local).AddTicks(8867),
+                            CreatedDate = new DateTime(2025, 5, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             QuestionId = 9
                         },
                         new
                         {
                             Id = 19,
                             Content = "Google Cloud",
-                            CreatedDate = new DateTime(2025, 5, 25, 12, 10, 29, 214, DateTimeKind.Local).AddTicks(8868),
+                            CreatedDate = new DateTime(2025, 5, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             QuestionId = 9
                         },
                         new
                         {
                             Id = 20,
                             Content = "Hiçbiri",
-                            CreatedDate = new DateTime(2025, 5, 25, 12, 10, 29, 214, DateTimeKind.Local).AddTicks(8870),
+                            CreatedDate = new DateTime(2025, 5, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             QuestionId = 9
                         },
                         new
                         {
                             Id = 21,
                             Content = "Analiz",
-                            CreatedDate = new DateTime(2025, 5, 25, 12, 10, 29, 214, DateTimeKind.Local).AddTicks(8871),
+                            CreatedDate = new DateTime(2025, 5, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             QuestionId = 10
                         },
                         new
                         {
                             Id = 22,
                             Content = "Tasarım",
-                            CreatedDate = new DateTime(2025, 5, 25, 12, 10, 29, 214, DateTimeKind.Local).AddTicks(8872),
+                            CreatedDate = new DateTime(2025, 5, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             QuestionId = 10
                         },
                         new
                         {
                             Id = 23,
                             Content = "Kodlama",
-                            CreatedDate = new DateTime(2025, 5, 25, 12, 10, 29, 214, DateTimeKind.Local).AddTicks(8874),
+                            CreatedDate = new DateTime(2025, 5, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             QuestionId = 10
                         },
                         new
                         {
                             Id = 24,
                             Content = "Test",
-                            CreatedDate = new DateTime(2025, 5, 25, 12, 10, 29, 214, DateTimeKind.Local).AddTicks(8875),
+                            CreatedDate = new DateTime(2025, 5, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             QuestionId = 10
                         },
                         new
                         {
                             Id = 25,
                             Content = "Bakım",
-                            CreatedDate = new DateTime(2025, 5, 25, 12, 10, 29, 214, DateTimeKind.Local).AddTicks(8876),
+                            CreatedDate = new DateTime(2025, 5, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             QuestionId = 10
                         });
                 });
@@ -548,7 +862,7 @@ namespace UserInsightSurvey.Migrations
                         {
                             Id = 1,
                             Content = "C# dilinde en çok kullandığınız özellik nedir?",
-                            CreatedDate = new DateTime(2025, 5, 25, 12, 10, 29, 214, DateTimeKind.Local).AddTicks(8283),
+                            CreatedDate = new DateTime(2025, 5, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             MultipleChoice = false,
                             QuestionType = 0
                         },
@@ -556,7 +870,7 @@ namespace UserInsightSurvey.Migrations
                         {
                             Id = 2,
                             Content = ".NET teknolojilerinden hangileriyle çalıştınız?",
-                            CreatedDate = new DateTime(2025, 5, 25, 12, 10, 29, 214, DateTimeKind.Local).AddTicks(8309),
+                            CreatedDate = new DateTime(2025, 5, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             MultipleChoice = true,
                             QuestionType = 2
                         },
@@ -564,7 +878,7 @@ namespace UserInsightSurvey.Migrations
                         {
                             Id = 3,
                             Content = "En çok kullandığınız IDE hangisidir?",
-                            CreatedDate = new DateTime(2025, 5, 25, 12, 10, 29, 214, DateTimeKind.Local).AddTicks(8312),
+                            CreatedDate = new DateTime(2025, 5, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             MultipleChoice = true,
                             QuestionType = 1
                         },
@@ -572,7 +886,7 @@ namespace UserInsightSurvey.Migrations
                         {
                             Id = 4,
                             Content = "Entity Framework ile ilgili deneyiminizi kısaca anlatır mısınız?",
-                            CreatedDate = new DateTime(2025, 5, 25, 12, 10, 29, 214, DateTimeKind.Local).AddTicks(8314),
+                            CreatedDate = new DateTime(2025, 5, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             MultipleChoice = false,
                             QuestionType = 0
                         },
@@ -580,7 +894,7 @@ namespace UserInsightSurvey.Migrations
                         {
                             Id = 5,
                             Content = "Aşağıdaki mimari desenlerden hangilerini projelerinizde kullandınız?",
-                            CreatedDate = new DateTime(2025, 5, 25, 12, 10, 29, 214, DateTimeKind.Local).AddTicks(8316),
+                            CreatedDate = new DateTime(2025, 5, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             MultipleChoice = true,
                             QuestionType = 2
                         },
@@ -588,7 +902,7 @@ namespace UserInsightSurvey.Migrations
                         {
                             Id = 6,
                             Content = ".NET Core ile .NET Framework arasındaki temel fark nedir?",
-                            CreatedDate = new DateTime(2025, 5, 25, 12, 10, 29, 214, DateTimeKind.Local).AddTicks(8318),
+                            CreatedDate = new DateTime(2025, 5, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             MultipleChoice = false,
                             QuestionType = 0
                         },
@@ -596,7 +910,7 @@ namespace UserInsightSurvey.Migrations
                         {
                             Id = 7,
                             Content = "Hangi veritabanı sistemleriyle çalıştınız?",
-                            CreatedDate = new DateTime(2025, 5, 25, 12, 10, 29, 214, DateTimeKind.Local).AddTicks(8320),
+                            CreatedDate = new DateTime(2025, 5, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             MultipleChoice = true,
                             QuestionType = 2
                         },
@@ -604,7 +918,7 @@ namespace UserInsightSurvey.Migrations
                         {
                             Id = 8,
                             Content = "Bir web API projesinde en önemli gördüğünüz güvenlik önlemi nedir?",
-                            CreatedDate = new DateTime(2025, 5, 25, 12, 10, 29, 214, DateTimeKind.Local).AddTicks(8323),
+                            CreatedDate = new DateTime(2025, 5, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             MultipleChoice = false,
                             QuestionType = 0
                         },
@@ -612,7 +926,7 @@ namespace UserInsightSurvey.Migrations
                         {
                             Id = 9,
                             Content = "Aşağıdaki bulut servislerinden hangilerini kullandınız?",
-                            CreatedDate = new DateTime(2025, 5, 25, 12, 10, 29, 214, DateTimeKind.Local).AddTicks(8324),
+                            CreatedDate = new DateTime(2025, 5, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             MultipleChoice = true,
                             QuestionType = 2
                         },
@@ -620,7 +934,7 @@ namespace UserInsightSurvey.Migrations
                         {
                             Id = 10,
                             Content = "Yazılım geliştirme sürecinde en çok hangi aşamada zorlanıyorsunuz?",
-                            CreatedDate = new DateTime(2025, 5, 25, 12, 10, 29, 214, DateTimeKind.Local).AddTicks(8326),
+                            CreatedDate = new DateTime(2025, 5, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             MultipleChoice = true,
                             QuestionType = 1
                         });
@@ -713,7 +1027,7 @@ namespace UserInsightSurvey.Migrations
                         {
                             Id = "252d1809-cd07-4ebd-87d1-83cefac3b78c",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "00bf48aa-21e6-4b81-9e8d-f26179a02769",
+                            ConcurrencyStamp = "b777b6f2-5ae3-4497-a2d9-f0ebb7caa004",
                             CvFilePath = "",
                             Email = "test@demo.com",
                             EmailConfirmed = true,
@@ -721,13 +1035,93 @@ namespace UserInsightSurvey.Migrations
                             Name = "Test",
                             NormalizedEmail = "TEST@DEMO.COM",
                             NormalizedUserName = "TEST@DEMO.COM",
-                            PasswordHash = "AQAAAAIAAYagAAAAEA/pjxfX1d4MJZwROT5hrv3ouVkl1ThceIXSKNpG8X/Q5aLIEv0gDW7gMfaEgvOl2w==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEJ9CXtfC6qm8bBQcnGEs/EqvfzgVf0H6Q1505j6h3ch0e9ERYlC9j6L/Nicemnukzw==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "3d9ca5ed-0808-4773-9562-d52466480b04",
+                            SecurityStamp = "f90acaea-ce0c-4ce3-8954-02448fc11ddb",
                             Surname = "Kullanıcı",
                             TwoFactorEnabled = false,
                             UserName = "test@demo.com",
                             UserType = 1
+                        },
+                        new
+                        {
+                            Id = "11111111-aaaa-bbbb-cccc-111111111111",
+                            AccessFailedCount = 0,
+                            ConcurrencyStamp = "ae81940d-2a14-478d-9eb7-bba88e302717",
+                            CvFilePath = "",
+                            Email = "ali.vural@example.com",
+                            EmailConfirmed = true,
+                            LockoutEnabled = false,
+                            Name = "Ali",
+                            NormalizedEmail = "ALI.VURAL@EXAMPLE.COM",
+                            NormalizedUserName = "ALI.VURAL@EXAMPLE.COM",
+                            PasswordHash = "AQAAAAIAAYagAAAAEDcGDdS9WhsjKNmIvMJkv4LJ3p1jxU7mzSNiauH+71aUpk61+np8KZdwNZ1GO8blUg==",
+                            PhoneNumberConfirmed = false,
+                            SecurityStamp = "80cf340d-3545-44a4-97d0-cf4e13b164f3",
+                            Surname = "Vural",
+                            TwoFactorEnabled = false,
+                            UserName = "ali.vural@example.com",
+                            UserType = 1
+                        },
+                        new
+                        {
+                            Id = "22222222-aaaa-bbbb-cccc-222222222222",
+                            AccessFailedCount = 0,
+                            ConcurrencyStamp = "aef3f959-d3bd-4442-9026-2c5fafa5c970",
+                            CvFilePath = "",
+                            Email = "zeynep.demir@example.com",
+                            EmailConfirmed = true,
+                            LockoutEnabled = false,
+                            Name = "Zeynep",
+                            NormalizedEmail = "ZEYNEP.DEMIR@EXAMPLE.COM",
+                            NormalizedUserName = "ZEYNEP.DEMIR@EXAMPLE.COM",
+                            PasswordHash = "AQAAAAIAAYagAAAAEJOsc3+rChRgKPHh4z+47rndtHk0EGpzP5REob+dXs3g2JMV3n89pdBKrh8MfnljIA==",
+                            PhoneNumberConfirmed = false,
+                            SecurityStamp = "6516d8c7-64f0-4e61-881e-76d5c32fcb63",
+                            Surname = "Demir",
+                            TwoFactorEnabled = false,
+                            UserName = "zeynep.demir@example.com",
+                            UserType = 1
+                        },
+                        new
+                        {
+                            Id = "33333333-aaaa-bbbb-cccc-333333333333",
+                            AccessFailedCount = 0,
+                            ConcurrencyStamp = "8f256dde-f468-442c-8b97-429643202094",
+                            CvFilePath = "",
+                            Email = "mehmet.kaya@example.com",
+                            EmailConfirmed = true,
+                            LockoutEnabled = false,
+                            Name = "Mehmet",
+                            NormalizedEmail = "MEHMET.KAYA@EXAMPLE.COM",
+                            NormalizedUserName = "MEHMET.KAYA@EXAMPLE.COM",
+                            PasswordHash = "AQAAAAIAAYagAAAAEIOzYXtPLGEwMW0seZlj0YoohAW7AmZHpZa56Ei+ULc5YRofX5n+LOM0YoNrkt3uCA==",
+                            PhoneNumberConfirmed = false,
+                            SecurityStamp = "ea53bf28-c409-4a5c-8053-8576d238176a",
+                            Surname = "Kaya",
+                            TwoFactorEnabled = false,
+                            UserName = "mehmet.kaya@example.com",
+                            UserType = 1
+                        },
+                        new
+                        {
+                            Id = "99999999-aaaa-bbbb-cccc-999999999999",
+                            AccessFailedCount = 0,
+                            ConcurrencyStamp = "8a74572d-aae7-48c7-991d-e81d6bb7638a",
+                            CvFilePath = "",
+                            Email = "admin@demo.com",
+                            EmailConfirmed = true,
+                            LockoutEnabled = false,
+                            Name = "Admin",
+                            NormalizedEmail = "ADMIN@DEMO.COM",
+                            NormalizedUserName = "ADMIN@DEMO.COM",
+                            PasswordHash = "AQAAAAIAAYagAAAAEMoJyJmozkFVHZEzU6G7tM8n/hZ2KUrL9W7ugKivMVKKPfS28LLZ9/NHmMJ6a4cL5Q==",
+                            PhoneNumberConfirmed = false,
+                            SecurityStamp = "da852466-6c9a-43c2-8782-226b0c15612f",
+                            Surname = "Yönetici",
+                            TwoFactorEnabled = false,
+                            UserName = "admin@demo.com",
+                            UserType = 2
                         });
                 });
 
@@ -784,6 +1178,10 @@ namespace UserInsightSurvey.Migrations
 
             modelBuilder.Entity("UserInsightSurvey.Data.Concrete.Answer", b =>
                 {
+                    b.HasOne("UserInsightSurvey.Data.Concrete.Option", "Option")
+                        .WithMany()
+                        .HasForeignKey("OptionId");
+
                     b.HasOne("UserInsightSurvey.Data.Concrete.Question", "Question")
                         .WithMany("Answers")
                         .HasForeignKey("QuestionId")
@@ -795,6 +1193,8 @@ namespace UserInsightSurvey.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.Navigation("Option");
 
                     b.Navigation("Question");
 

@@ -10,5 +10,6 @@ namespace UserInsightSurvey.Repositories.Abstract
         void Add(Option option);
         void Update(Option option);
         void Delete(int id); // Soft delete
+        List<Option> GetOptionsByQuestionId(int questionId);
     }
 } 
