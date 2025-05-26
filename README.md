@@ -50,7 +50,7 @@ veya Visual Studio ile F5 tuşuna basarak başlatabilirsiniz.
 
 ## Testler
 
-- Şu anda test projesi bulunmamaktadır. Test altyapısı eklenmesi önerilir.
+- Şu anda test projesi bulunmamaktadır. Test altyapısı eklenmeli.
 
 ## Yol Haritası (Planlanan Özellikler)
 
