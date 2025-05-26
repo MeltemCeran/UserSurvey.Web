@@ -1,6 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using UserInsightSurvey.Data.Concrete;
 using UserInsightSurvey.Context;
 using UserInsightSurvey.Repositories.Abstract;

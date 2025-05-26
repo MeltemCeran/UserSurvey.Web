@@ -2,10 +2,6 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using UserInsightSurvey.Models.Concrete;
 using UserInsightSurvey.Data.Concrete;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
-using System.IO;
-using UserInsightSurvey.Common;
 using UserInsightSurvey.Managers.Abstract;
 
 namespace UserInsightSurvey.Controllers

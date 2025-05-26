@@ -1,8 +1,4 @@
-﻿using System;
-using System.IO;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Identity;
+﻿using Microsoft.AspNetCore.Identity;
 using UserInsightSurvey.Data.Concrete;
 using UserInsightSurvey.Models.Concrete;
 using UserInsightSurvey.Managers.Abstract;

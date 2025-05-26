@@ -1,10 +1,5 @@
-using System;
-using System.Collections.Generic;
-using System.Threading.Tasks;
-using UserInsightSurvey.Models;
 using UserInsightSurvey.Models.Concrete;
 using UserInsightSurvey.Repositories.Abstract;
-using System.Linq;
 using UserInsightSurvey.Managers.Abstract;
 
 namespace UserInsightSurvey.Managers.Concrete

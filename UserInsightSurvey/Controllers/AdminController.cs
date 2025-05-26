@@ -3,7 +3,6 @@ using UserInsightSurvey.Models.Concrete;
 using Microsoft.AspNetCore.Identity;
 using UserInsightSurvey.Data.Concrete;
 using UserInsightSurvey.Common.Enums;
-using Microsoft.AspNetCore.Authorization;
 using UserInsightSurvey.Managers.Abstract;
 
 namespace UserInsightSurvey.Controllers

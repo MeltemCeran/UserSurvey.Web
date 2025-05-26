@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+﻿
 using UserInsightSurvey.Data.Concrete;
 
 namespace UserInsightSurvey.Repositories.Abstract

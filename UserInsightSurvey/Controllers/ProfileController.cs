@@ -3,7 +3,6 @@ using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 using UserInsightSurvey.Managers.Abstract;
 using UserInsightSurvey.Models.Concrete;
-using Microsoft.AspNetCore.Http;
 
 namespace UserInsightSurvey.Controllers
 {

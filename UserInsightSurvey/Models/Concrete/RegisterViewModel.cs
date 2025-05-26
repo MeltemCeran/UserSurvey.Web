@@ -1,6 +1,5 @@
 using System.ComponentModel.DataAnnotations;
-using Microsoft.AspNetCore.Http;
-using UserInsightSurvey.Common;
+
 
 namespace UserInsightSurvey.Models.Concrete
 {

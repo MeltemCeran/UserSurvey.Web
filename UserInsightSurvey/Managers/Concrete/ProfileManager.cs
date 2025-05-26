@@ -3,8 +3,6 @@ using UserInsightSurvey.Managers.Abstract;
 using UserInsightSurvey.Models.Concrete;
 using UserInsightSurvey.Repositories.Abstract;
 using UserInsightSurvey.Data.Concrete;
-using System.Collections.Generic;
-using System.Linq;
 
 namespace UserInsightSurvey.Managers.Concrete
 {
